@@ -22,10 +22,10 @@
 
 ## Insights
 
-From the visualizations we can see that revenue has taken a slight hit after the implementation of 5G.
-PIO has the highest % of market share followed by Britel and AtliQ.
-Mumbai, Delhi, Kolkata, Bangalore and Chennai are the cities that have generated the highest revenue whereas Chandigarh, Gurgaon, and Raipur have generated the least revenue.
-The Market-share dashboard shows the change of Revenue, ARPU and TAU of each city before 5G and after 5G implementation.
-Plan P1, P2 and P3 were the best performers before 5g, where after 5Gs introduction plan P1, P2 and P11 are performing best.
-Forecasting revenue of each plans based on previous trends.
+  1. From the visualizations we can see that revenue has taken a slight hit after the implementation of 5G.
+  2. PIO has the highest % of market share followed by Britel and AtliQ.
+  3. Mumbai, Delhi, Kolkata, Bangalore and Chennai are the cities that have generated the highest revenue whereas Chandigarh, Gurgaon, and Raipur have generated the least revenue.
+  4. The Market-share dashboard shows the change of Revenue, ARPU and TAU of each city before 5G and after 5G implementation.
+  5. Plan P1, P2 and P3 were the best performers before 5g, where after 5Gs introduction plan P1, P2 and P11 are performing best.
+  6. Forecasting revenue of each plans based on previous trends.
 
