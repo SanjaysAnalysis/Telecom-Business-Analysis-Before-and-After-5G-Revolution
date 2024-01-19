@@ -1,5 +1,7 @@
 # Telecom Business Analysis Pre and Post 5G Launch
 
+### In this project I had to analyze AtliQ a Telecom company’s business before and after the launch of 5G. And also compare its performance with those of its competitors. The Dashboard is divided into 3 categories – Revenue, Market-Share and Plan Analysis.
+
 ### Home Page
 
 ![Telecom Analysis - 1](https://github.com/SanjaysAnalysis/Telecom_Business_Analysis_Pre_and_Post_5G_Launch/assets/150272382/ee34c118-0849-4cb8-860d-ff7bd5a41fda)
@@ -18,7 +20,7 @@
 
 ![Telecom Analysis - 4](https://github.com/SanjaysAnalysis/Telecom_Business_Analysis_Pre_and_Post_5G_Launch/assets/150272382/7b631931-6598-410b-8803-bba9167e8df1)
 
-### In this project I had to analyze AtliQ a Telecom company’s business before and after the launch of 5G. And also compare its performance with those of its competitors. The Dashboard is divided into 3 categories – Revenue, Market-Share and Plan Analysis.
+
 
 ## Insights
 
