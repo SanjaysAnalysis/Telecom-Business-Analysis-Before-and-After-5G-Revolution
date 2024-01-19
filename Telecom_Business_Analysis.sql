@@ -3,8 +3,8 @@ select * from fact_atliqo_metrics
 select * from fact_market_share
 
 select * from fact_plan_revenue
-/*
 
+/*
 update fact_atliqo_metrics 
 set active_users_lakhs = active_users_lakhs * 100000
 
@@ -61,7 +61,6 @@ April		407.19					Before 5G
 February	425.69					Before 5G
 January		354.37					Before 5G
 March		410.45					Before 5G
-
 */
 
 -- Q3) Top 5 Cities by Revenue
@@ -79,7 +78,6 @@ Delhi			387.2
 Kolkata			384.39
 Bangalore		338.61
 Chennai			296.37
-
 */
 
 -- Q4) Bottom 5 Cities by Revenue
@@ -101,6 +99,7 @@ Patna			98.2
 
 -- Q5) Total Revenue, ARPU, MAU, TUnU for each city along with percent of change before and after 5G
 
+--creating a cte to calculate the metrics for pre 5G period
 with cte1 as (
 select C.City_name, 
 sum(AtliQo_revenue_crores) Before_5G_Revenue, 
@@ -113,6 +112,7 @@ left join dim_date D on A.date = D.date
 where [before/after_5g] = 'Before 5G'
 group by C.city_name
 ),
+--creating a cte to calculate the metrics for post 5G period
 cte2 as (
 select C.City_name, sum(AtliQo_revenue_crores) After_5G_revenue, 
 avg(arpu) as After_5G_ARPU, avg(active_users_lakhs) as  After_5G_MAU, sum(unsubscribed_users_lakhs) as  After_5G_TUnU
@@ -122,14 +122,19 @@ left join dim_date D on A.date = D.date
 where [before/after_5g] = 'After 5G'
 group by C.city_name
 )
-select cte1.City_name, 
+--combining both cte’s and calculating the % change
+select cte1.City_name,
+--Revenue
 concat(Before_5G_Revenue/10000000,' cr') as [Revenue Before 5G (cr)], 
 concat(After_5G_revenue/10000000,' cr') as [Revenue After 5G (cr)], 
 concat(round(((After_5G_revenue-Before_5G_Revenue)/Before_5G_Revenue * 100),2),'%') as [Revenue % change],
+--ARPU
 Before_5G_ARPU, After_5G_ARPU, concat(round(((After_5G_ARPU-Before_5G_ARPU)/Before_5G_ARPU *100),2),'%') as [ARPU % change],
+--MAU
 concat(Before_5G_MAU/100000,' lakh') as [MAU Before 5G (lakhs)], 
 concat(After_5G_MAU/100000,' lakh') as [MAU After 5G (lakhs)], 
 concat(round(((After_5G_MAU-Before_5G_MAU)/Before_5G_MAU *100),2), '%') as [MAU % change],
+--TUnU	
 concat(Before_5G_TUnU/100000,' lakh') as [TUnU Before 5G (lakhs)], 
 concat(After_5G_TUnU/100000,' lakh') as [TUnU After 5G (lakhs)], 
 concat(round(((After_5G_TUnU-Before_5G_TUnU)/Before_5G_TUnU * 100),2),'%') as [TUnU % change]
@@ -198,11 +203,11 @@ order by avg(msa5) desc
 
 /*
 company		Market_share%_Before_5G		Market_share_After_5G		% change
-PIO					35.11						35.72				1.72%
-Britel				27.26						27.71				1.67%
-AtliQo				20.24						18.88				-6.69%
-DADAFONE			10.22						10.39				1.71%
-Others				7.17						7.29				1.7%
+PIO			35.11				35.72			1.72%
+Britel			27.26				27.71			1.67%
+AtliQo			20.24				18.88			-6.69%
+DADAFONE		10.22				10.39			1.71%
+Others			7.17				7.29			1.7%
 */
 
 
@@ -218,19 +223,19 @@ group by p.plans, d.plan_description
 order by [Total_Revenue (cr)] desc
 
 /*
-plans					plan_description						Total_Revenue (cr)
+plans				plan_description				Total_Revenue (cr)
 p1		Smart Recharge Pack (2 GB / Day Combo For 3 months)			419.93
 p2		Super Saviour Pack (1.5 GB / Day Combo For 56 days)			297.53
-p3		Elite saver Pack (1 GB/ Day) Valid: 28 Days					261.54
+p3		Elite saver Pack (1 GB/ Day) Valid: 28 Days				261.54
 p4		Mini Data Saver Pack (500 MB/ Day) Valid: 20 Days			195.22
 p11		Ultra Fast Mega Pack (3GB / Day Combo For 80 days)			185.95
-p5		Rs. 99 Full Talktime Combo Pack								165.61
+p5		Rs. 99 Full Talktime Combo Pack						165.61
 p6		Xstream Mobile Data Pack: 15GB Data | 28 days				124.37
-p12		Ultra Duo Data Pack (1.8GB / Day Combo For 55 days )		116.13
-p7		25 GB Combo 3G / 4G Data Pack								73.8
-p8		Daily Saviour (1 GB / Day) validity: 1 Day					43.43
+p12		Ultra Duo Data Pack (1.8GB / Day Combo For 55 days )			116.13
+p7		25 GB Combo 3G / 4G Data Pack						73.8
+p8		Daily Saviour (1 GB / Day) validity: 1 Day				43.43
 p13		Mini Ultra Saver Pack (750 MB/Day for 28 Days)				31.45
-p9		Combo TopUp: 14.95 Talktime and 300 MB data					22.68
+p9		Combo TopUp: 14.95 Talktime and 300 MB data				22.68
 p10		Big Combo Pack (6 GB / Day) validity: 3 Days				13.11
 */
 
@@ -246,9 +251,9 @@ order by [Plan_Revenue_Before_5G (cr)] Desc
 
 /*
 plans	Plan_Revenue_Before_5G (cr)
-p1				181.27
-p2				148.8
-p3				131.93
+p1		181.27
+p2		148.8
+p3		131.93
 */
 
 -- Q10) Top 3 plans by revenue After 5G
@@ -263,13 +268,14 @@ order by [Plan_revenue_After_5G (cr)] Desc
 
 /*
 plans	Plan_revenue_After_5G (cr)
-p1				238.66
-p11				185.95
-p2				148.73
+p1		238.66
+p11		185.95
+p2		148.73
 */
 
 -- Q11) Top 3 Cities by Revenue for each plan Before and After 5G
 
+-- creating a cte to calculate the metrics for pre 5G plans
 with B5GCityRank as (
 select c.city_name, p.plans, sum(plan_revenue_crores) as B5GRevenue,
 row_number() over (partition by p.plans order by sum(plan_revenue_crores) desc) as rn
@@ -279,6 +285,7 @@ left join dim_date d on p.date = d.date
 where[before/after_5g] = 'Before 5G'
 group by c.city_name, p.plans
 ), 
+--creating a cte to calculate the metrics for post 5G plans
 A5GCityRank as (
 select c.city_name, p.plans, sum(plan_revenue_crores) as A5GRevenue,
 ROW_NUMBER() over (partition by p.plans order by sum(plan_revenue_crores) desc) as rn
@@ -288,6 +295,7 @@ left join dim_date d on p.date = d.date
 where [before/after_5g] = 'After 5G'
 group by c.city_name, plans
 )
+--combining both cte’s and finding if the ranking of cities is same or different as before 
 select a.plans, b.city_name as Before_5G_City, b.B5GRevenue as [Before_5G_Revenue(cr)],
 a.city_name as After_5G_City, a.A5GRevenue as [After_5G_Revenue(cr)],
 case when b.city_name = a.city_name then 'same' else 'different' end as [Same city or Different]
@@ -301,7 +309,7 @@ plans	Before_5G_City	Before_5G_Revenue(cr)  	After_5G_City	After_5G_Revenue(cr)	
 p1			Mumbai			25.38					Mumbai			35.72						same
 p1			Kolkata			21.7					Kolkata			29.61						same
 p1			Delhi			20.51					Delhi			29.48						same
-p2			Mumbai			20.53					Mumbai			23							same
+p2			Mumbai			20.53					Mumbai			23						same
 p2			Kolkata			19.17					Delhi			18.43						different
 ...	
 p6			Kolkata			9.81					Kolkata			6.04						same
