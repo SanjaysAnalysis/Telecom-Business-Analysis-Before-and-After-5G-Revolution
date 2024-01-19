@@ -39,8 +39,8 @@ from fact_atliqo_metrics
 /* Output
 Key_Metric		Value
 ARPU			200.74 
-TAU				13.48 lakh
-Total Revenue	3187.36 cr
+TAU			13.48 lakh
+Total Revenue		3187.36 cr
 TUnU			125.9 lakh
 */
 
@@ -143,21 +143,21 @@ order by cte1.city_name
 
 /*
 City_name	Revenue Before 5G (cr)	Revenue After 5G (cr)	Revenue % change	Before_5G_ARPU	After_5G_ARPU	ARPU % change	MAU Before 5G (lakhs)	MAU After 5G (lakhs)	MAU % change	TUnU Before 5G (lakhs)	TUnU After 5G (lakhs)	TUnU % change
-Ahmedabad		94.49 cr				92.58 cr				-2.02%				176.25			214.75			21.84%			13.3775 lakh			10.845 lakh				-18.93%			3.32 lakh				3.86 lakh				16.27%
-Bangalore		168.67 cr				169.94 cr				0.75%				174.75			209				19.6%			24.135 lakh				20.77 lakh				-13.94%			5.71 lakh				6.89 lakh				20.67%
-Chandigarh		30.68 cr				30.51 cr				-0.55%				182.5			200.75			10%				4.2125 lakh				4.0025 lakh				-4.99%			1.03 lakh				1.5 lakh				45.63%
-Chennai			150.13 cr				146.24 cr				-2.59%				203				197.75			-2.59%			18.4775 lakh			18.5425 lakh			0.35%			5.17 lakh				7.08 lakh				36.94%
-Coimbatore		45.67 cr				45.72 cr				0.11%				200				216.5			8.25%			5.7925 lakh				5.255 lakh				-9.28%			1.55 lakh				1.96 lakh				26.45%
-Delhi			196.38 cr				190.82 cr				-2.83%				181.5			214.5			18.18%			27.0425 lakh			22.275 lakh				-17.63%			7.7 lakh				8.98 lakh				16.62%
-Gurgaon			27.12 cr				27.53 cr				1.51%				183.5			214.5			16.89%			3.685 lakh				3.2025 lakh				-13.09%			0.91 lakh				1.02 lakh				12.09%
-Hyderabad		118.63 cr				117.1 cr				-1.29%				196.5			217.25			10.56%			15.15 lakh				14.0175 lakh			-7.48%			3.86 lakh				5.33 lakh				38.08%
-Jaipur			70.09 cr				70.78 cr				0.98%				195				209.25			7.31%			9.035 lakh				8.535 lakh				-5.53%			2.23 lakh				3.4 lakh				52.47%
-Kolkata			192.55 cr				191.84 cr				-0.37%				183.75			193				5.03%			26.0775 lakh			24.84 lakh				-4.75%			6.93 lakh				8.86 lakh				27.85%
-Lucknow			64.83 cr				66.01 cr				1.82%				203.25			219.5			8%				7.9275 lakh				8.1375 lakh				2.65%			1.72 lakh				3.06 lakh				77.91%
-Mumbai			244.4 cr				245.15 cr				0.31%				196.75			231				17.41%			31.335 lakh				26.8375 lakh			-14.35%			9.58 lakh				8.37 lakh				-12.63%
-Patna			48.74 cr				49.46 cr				1.48%				192.5			231.5			20.26%			6.3625 lakh				5.3375 lakh				-16.11%			1.71 lakh				1.89 lakh				10.53%
-Pune			129.64 cr				130.12 cr				0.37%				200				174.25			-12.88%			16.1275 lakh			19.04 lakh				18.06%			4.34 lakh				6.74 lakh				55.3%
-Raipur			15.68 cr				15.86 cr				1.15%				184.25			225.25			22.25%			2.145 lakh				1.7875 lakh				-16.67%			0.57 lakh				0.63 lakh				10.53%
+Ahmedabad		94.49 cr		92.58 cr		-2.02%		176.25		214.75		21.84%			13.3775 lakh		10.845 lakh	-18.93%			3.32 lakh		3.86 lakh	16.27%
+Bangalore		168.67 cr		169.94 cr		0.75%		174.75		209		19.6%			24.135 lakh		20.77 lakh	-13.94%			5.71 lakh		6.89 lakh	20.67%
+Chandigarh		30.68 cr		30.51 cr		-0.55%		182.5		200.75		10%			4.2125 lakh		4.0025 lakh	-4.99%			1.03 lakh		1.5 lakh	45.63%
+Chennai			150.13 cr		146.24 cr		-2.59%		203		197.75		-2.59%			18.4775 lakh		18.5425 lakh	0.35%			5.17 lakh		7.08 lakh	36.94%
+Coimbatore		45.67 cr		45.72 cr		0.11%		200		216.5		8.25%			5.7925 lakh		5.255 lakh	-9.28%			1.55 lakh		1.96 lakh	26.45%
+Delhi			196.38 cr		190.82 cr		-2.83%		181.5		214.5		18.18%			27.0425 lakh		22.275 lakh	-17.63%			7.7 lakh		8.98 lakh	16.62%
+Gurgaon			27.12 cr		27.53 cr		1.51%		183.5		214.5		16.89%			3.685 lakh		3.2025 lakh	-13.09%			0.91 lakh		1.02 lakh	12.09%
+Hyderabad		118.63 cr		117.1 cr		-1.29%		196.5		217.25		10.56%			15.15 lakh		14.0175 lakh	-7.48%			3.86 lakh		5.33 lakh	38.08%
+Jaipur			70.09 cr		70.78 cr		0.98%		195		209.25		7.31%			9.035 lakh		8.535 lakh	-5.53%			2.23 lakh		3.4 lakh	52.47%
+Kolkata			192.55 cr		191.84 cr		-0.37%		183.75		193		5.03%			26.0775 lakh		24.84 lakh	-4.75%			6.93 lakh		8.86 lakh	27.85%
+Lucknow			64.83 cr		66.01 c			1.82%		203.25		219.5		8%			7.9275 lakh		8.1375 lakh	2.65%			1.72 lakh		3.06 lakh	77.91%
+Mumbai			244.4 cr		245.15 cr		0.31%		196.75		231		17.41%			31.335 lakh		26.8375 lakh	-14.35%			9.58 lakh		8.37 lakh	-12.63%
+Patna			48.74 cr		49.46 cr		1.48%		192.5		231.5		20.26%			6.3625 lakh		5.3375 lakh	-16.11%			1.71 lakh		1.89 lakh	10.53%
+Pune			129.64 cr		130.12 cr		0.37%		200		174.25		-12.88%			16.1275 lakh		19.04 lakh	18.06%			4.34 lakh		6.74 lakh	55.3%
+Raipur			15.68 cr		15.86 cr		1.15%		184.25		225.25		22.25%			2.145 lakh		1.7875 lakh	-16.67%			0.57 lakh		0.63 lakh	10.53%
 */
 
 -- Q6) Market share by different companies
@@ -169,7 +169,7 @@ order by avg([market_share_%]) desc
 
 /*
 Company		Total_Market_share_%
-PIO				35.42
+PIO			35.42
 Britel			27.49
 AtliQo			19.56
 DADAFONE		10.31
@@ -178,22 +178,23 @@ Others			7.23
 
 
 -- Q7) Market share of each company before 5G and After 5G
-with cte1 as(select company, [market_share_%] as msb5
-			from fact_market_share f 
-			left join dim_date d on f.date = d.date 
-			where d.date in (select date 
-							from dim_date 
-							where [before/after_5g] = 'Before 5G'
-							)
-			),
-cte2 as(select company, [market_share_%] as msa5
-			from fact_market_share f 
-			left join dim_date d on f.date = d.date 
-			where d.date in (select date 
-							from dim_date 
-							where [before/after_5g] = 'After 5G'
-							)
+with 
+cte1 as(select company, [market_share_%] as msb5
+	from fact_market_share f 
+	left join dim_date d on f.date = d.date 
+	where d.date in (select date 
+			from dim_date 
+			where [before/after_5g] = 'Before 5G'
 			)
+	),
+cte2 as(select company, [market_share_%] as msa5
+	from fact_market_share f 
+	left join dim_date d on f.date = d.date 
+	where d.date in (select date 
+			from dim_date 
+			where [before/after_5g] = 'After 5G'
+			)
+	)
 select cte1.company, round(avg(msb5),2) as [Market_share%_Before_5G], 
 round(avg(msa5),2) as Market_share_After_5G, 
 concat(round((avg(msa5)-avg(msb5))/avg(msb5)*100,2),'%') as [% change]
